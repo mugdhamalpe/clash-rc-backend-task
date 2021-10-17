@@ -11,12 +11,14 @@ OPTIONS = (
 )
 class UserRegisterForm(UserCreationForm):
     email = forms.EmailField()
-    firstname = forms.CharField(max_length=200)
-    lasttname = forms.CharField(max_length=200)
-    gender = forms.ChoiceField(choices = OPTIONS)
-    phonenumber = forms.IntegerField()
+    # firstname = forms.CharField(max_length=200)
+    # lasttname = forms.CharField(max_length=200)
+    # gender = forms.ChoiceField(choices = OPTIONS)
+    # phonenumber = forms.IntegerField()
 
 
     class Meta:
         model = User
         fields = ['username', 'email', 'password1', 'password2']
+
+

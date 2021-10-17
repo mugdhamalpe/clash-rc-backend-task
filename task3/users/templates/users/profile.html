@@ -1,7 +1,115 @@
 {% extends "home/base.html" %}
 {% load crispy_forms_tags %}
 {% block content %}
-    <h3>Hello there!</h3>
-    <h1>You have been logged in as {{ user.username }}</h1>
+    <h1>Hello {{ user.username }}</h1>
+    <!-- <p>You have been logged in as {{ user.username }}</p> -->
     <h2>You have an email id of {{ user.email }}</h2>
+
+    <br>
+    <body>
+        <!-- <div class="left-data" style="float: left;">
+            <form method="POST" name="MyForm">
+                {% csrf_token %}
+                <h1>Task1</h1>
+                Input: <input type="text" name="name">
+                <button type="submit" onclick="displayop()">Submit</button>
+            </form>
+            <input id="rd1" type="radio" name="function" value="numfromstr"> Extract numbers from a string greater than 100<br>
+            <input id="rd2" type="radio" name="function" value="extractdate"> Extract date from a url string (yyyy-mm-dd)<br>
+            <input id="rd3" type="radio" name="function" value="extractstr"> Extract strings within single quotes in a string<br>
+            <input id="rd4" type="radio" name="function" value="emailvalidate"> Email validator<br>
+            <input id="rd5" type="radio" name="function" value="ipaddress"> Validate IP addresses and determine class<br>
+            <input id="rd6" type="radio" name="function" value="macaddress"> Validate MAC address<br>
+            <input id="rd7" type="radio" name="function" value="cameltosnake"> Convert CamelCase to snake_case<br>
+        </div>
+        <div class="right-data" style="float: right;">
+            <h1>Output</h1>
+            <h6 id="selectedfunction">Extracted numbers are: {{numbers}}</h6>
+            <h6 id="selectedfunction">Extracted numbers are: {{extractedate}}</h6>
+
+        </div> -->
+        <!-- <script type="text/Javascript">
+            function displayop() {
+                var rd1 = document.getElementById("rd1");
+                var rd2 = document.getElementById("rd2");
+                var result = document.getElementById("selectedfunction");
+                var rad = document.myForm.function;
+                if(rd1.checked==true){
+                    alert("The channel selected is: "+rd1.value);
+                    // document.write(rd1);
+                }
+                else if(rd2.checked==true){
+                    alert("The channel selected is: "+rd2.value);
+                    // document.write(rd2);
+                }
+                else{
+                    alert("No channel selected");
+                }
+                // output = document.querySelector('input[name=function]:checked').value;
+                // document.querySelector("#selectedfunction").textContent="The output is "+output;
+            }
+
+        </script> -->
+
+    <!-- <form name="myform" action="#" method="post">
+        Enter Email ID <input type="text" id="email" /><br/>
+        <input type="button" value="Submit" onclick="checkEmail()"/>
+    </form> -->
+
+    <!--1st-->
+    <!-- <form name="myform" action="#" method="post">
+        Enter input string <input type="text" id="string1" /><br/>
+        <input type="button" value="Submit" onclick="checkString()"/>
+    </form> -->
+
+    <!--2nd-->
+
+    <!-- <div class="left-col" style="float: left;">
+        <p>Enter your input here!</p><input type="text"><br><br>
+        <p>Choose one of the options to perform : </p>
+        <input type="radio" name="function1"> Extract numbers from a string greater than 100<br>
+        <input type="radio" name="function2"> Extract date from a url string (yyyy-mm-dd)<br>
+        <input type="radio" name="function3"> Extract strings within single quotes in a string<br>
+        <input type="radio" name="function4"> Email validator<br>
+        <input type="radio" name="function5"> Validate IP addresses and determine class<br>
+        <input type="radio" name="function6"> Validate MAC address<br>
+        <input type="radio" name="function7"> Convert CamelCase to snake_case<br>
+        <br>
+        <input type="submit" value="Evaluate" onclick=""><br>
+    </div>
+    <div class="right-col" style="float: right;">
+        <p>Result :</p><br>
+        <output name="result"></output>
+
+    </div> -->
+    </body>
+    <!-- <script>
+        // function checkEmail()
+        // {
+        //  var email = document.getElementById('email').value
+        //  var regex = /^([a-zA-Z0-9_\.]+)@([a-zA-Z0-9_\.]+)\.([a-zA-Z]{2,5})$/
+        //  var res = regex.test(email)
+
+        //  if(!res) {
+        //   alert('Please enter valid email id')
+        //  }
+        //  else  {
+        //   alert('Thank you')
+        //  }
+        // }
+
+        function checkString()
+        {
+         var email = document.getElementById('string1').value
+         var regex = /^([2-9]\d|[1-9]\d{3,})$/
+         var res = regex.test(string1)
+
+         if(!res) {
+          alert('Please enter valid email id')
+         }
+         else  {
+          alert('Thank you')
+         }
+        }
+    </script> -->
 {% endblock content %}

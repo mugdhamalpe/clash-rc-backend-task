@@ -1,0 +1,80 @@
+{% extends "home/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+    <h1 style="text-align: center;">Text Formatter</h1>
+    <body>
+        <div class="left-data" style="float: left;">
+            <form method="POST" name="MyForm">
+                {% csrf_token %}
+                <h2>Input</h2>
+                Input: <input type="text" name="name" id="input"><hr>
+                <!-- <button type="submit" onclick="displayop()">Submit</button><hr> -->
+                <h6>Select function to perform before proceeding: </h6>
+                <br>
+                <input id="rd1" type="radio" name="function" value="numfromstr"> Extract numbers from a string greater than 100<br>
+                <input id="rd2" type="radio" name="function" value="extractdate"> Extract date from a url string (yyyy-mm-dd)<br>
+                <input id="rd3" type="radio" name="function" value="extractstr"> Extract strings within single quotes in a string<br>
+                <input id="rd4" type="radio" name="function" value="emailvalidate"> Email validator<br>
+                <input id="rd5" type="radio" name="function" value="ipaddress"> Validate IP addresses and determine class<br>
+                <input id="rd6" type="radio" name="function" value="macaddress"> Validate MAC address<br>
+                <input id="rd7" type="radio" name="function" value="cameltosnake"> Convert CamelCase to snake_case<br>
+                <hr>
+                <button type="submit" onclick="displayop()">Submit</button>
+            </form>
+        </div>
+        <div class="right-data" style="float: right;">
+            <h2>Output</h2><br>
+            <h5 id="selectedfunction1">Extracted output is: </h5><h4 style="color: green; border: 3px solid green; padding: 10px; border-radius: 1rem;">{{numbers}}</h4>
+        </div>
+        <script type="text/Javascript">
+            function displayop() {
+                var rd1 = document.getElementById("rd1");
+                var rd2 = document.getElementById("rd2");
+                var result1 = document.getElementById("selectedfunction1");
+                var result2 = document.getElementById("selectedfunction2");
+                // var rad = document.myForm.function;
+                if(rd1.checked==true){
+                    alert("The radio button selected is: "+rd1.value);
+                    // document.getElementById("selectedfunction1").innerHTML = "{{numbers}}";
+                }
+                else if(rd2.checked==true){
+                    alert("The radio button selected is: "+rd2.value);
+                    document.getElementById("selectedfunction2").innerHTML = "{{extractedate}}";
+                    document.write(rd2);
+                    var testdate = document.getElementById("input");
+                    function validateDate(testdate) {
+                    var date_regex = /(\d{1,4}([.\-/])\d{1,2}([.\-/])\d{1,4})/ ;
+                    return date_regex.test(testdate);
+                    }
+                }
+                else if(rd3.checked==true){
+                    alert("The radio button selected is: "+rd3.value);
+                    var singlequote = document.getElementById("input");
+                    function validateStr(singlequote) {
+                    var str_regex = /.*'([^']*)'.*/ ;
+                    return str_regex.test(singlequote);
+                    }
+                }
+                else if(rd4.checked==true){
+                    alert("The radio button selected is: "+rd4.value)
+                }
+                else if(rd5.checked==true){
+                    alert("The radio button selected is: "+rd5.value)
+                }
+                else if(rd6.checked==true){
+                    alert("The radio button selected is: "+rd6.value)
+                }
+                else if(rd7.checked==true){
+                    alert("The radio button selected is: "+rd7.value)
+                }
+                else{
+                    alert("No radio button selected");
+                }
+                // output = document.querySelector('input[name=function]:checked').value;
+                // document.querySelector("#selectedfunction").textContent="The output is "+output;
+            }
+
+        </script>
+    </body>
+
+{% endblock content %}

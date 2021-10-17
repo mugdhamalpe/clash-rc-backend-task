@@ -29,4 +29,5 @@ urlpatterns = [
     path('', include('home.urls')),
     url(r'^search/$', search),
     path('search/', user_views.search, name='search'),
+    path('text/', user_views.textchecker, name='textchecker'),
 ]

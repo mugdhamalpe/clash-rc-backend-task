@@ -12,28 +12,29 @@
     <link rel="stylesheet" type="text/css" href="{% static 'home/main.css' %}">
 
     {% if title %}
-        <title>Django - task3 {{ title }}</title>
+        <title>Django | Task {{ title }}</title>
     {% else %}
-        <title>Django task3</title>
+        <title>Django Task</title>
     {% endif %}
 </head>
 <body>
     <header class="site-header">
         <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
           <div class="container">
-            <a class="navbar-brand mr-4" href="{% url 'blog-home' %}">Home page</a>
+            <a class="navbar-brand mr-4" href="{% url 'blog-home' %}">Django Text Formatter</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarToggle">
               <div class="navbar-nav mr-auto">
                 <a class="nav-item nav-link" href="{% url 'blog-home' %}">Home</a>
-                <a class="nav-item nav-link" href="{% url 'blog-about' %}">About</a>
+                <!-- <a class="nav-item nav-link" href="{% url 'blog-about' %}">About</a> -->
               </div>
               <!-- Navbar Right Side -->
               <div class="navbar-nav">
                 {% if user.is_authenticated %}
                   <a class="nav-item nav-link" href="{% url 'profile' %}">Profile</a>
+                  <a class="nav-item nav-link" href="{% url 'textchecker' %}">Text formatter</a>
                   <a class="nav-item nav-link" href="{% url 'logout' %}">Logout</a>
                 {% else %}
                   <a class="nav-item nav-link" href="{% url 'login' %}">Login</a>
@@ -56,13 +57,13 @@
             {% endif %}
             {% block content %}{% endblock %}
           </div>
-          <div class="col-md-4">
+          <!-- <div class="col-md-4">
             <div class="content-section">
               <h3>Hello there!</h3>
-              <p class='text-muted'>Welcome to the django project...
+              <p class='text-muted'>Welcome to the Text Formatting website...
               </p>
             </div>
-          </div>
+          </div> -->
         </div>
     </main>
 
