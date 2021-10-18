@@ -31,7 +31,7 @@
                 var rd1 = document.getElementById("rd1");
                 var rd2 = document.getElementById("rd2");
                 var result1 = document.getElementById("selectedfunction1");
-                var result2 = document.getElementById("selectedfunction2");
+//              var result2 = document.getElementById("selectedfunction2");
                 // var rad = document.myForm.function;
                 if(rd1.checked==true){
                     alert("The radio button selected is: "+rd1.value);
@@ -39,21 +39,21 @@
                 }
                 else if(rd2.checked==true){
                     alert("The radio button selected is: "+rd2.value);
-                    document.getElementById("selectedfunction2").innerHTML = "{{extractedate}}";
-                    document.write(rd2);
-                    var testdate = document.getElementById("input");
-                    function validateDate(testdate) {
-                    var date_regex = /(\d{1,4}([.\-/])\d{1,2}([.\-/])\d{1,4})/ ;
-                    return date_regex.test(testdate);
-                    }
+//                     document.getElementById("selectedfunction2").innerHTML = "{{extractedate}}";
+//                     document.write(rd2);
+//                     var testdate = document.getElementById("input");
+//                     function validateDate(testdate) {
+//                     var date_regex = /(\d{1,4}([.\-/])\d{1,2}([.\-/])\d{1,4})/ ;
+//                     return date_regex.test(testdate);
+//                     }
                 }
                 else if(rd3.checked==true){
                     alert("The radio button selected is: "+rd3.value);
-                    var singlequote = document.getElementById("input");
-                    function validateStr(singlequote) {
-                    var str_regex = /.*'([^']*)'.*/ ;
-                    return str_regex.test(singlequote);
-                    }
+//                     var singlequote = document.getElementById("input");
+//                     function validateStr(singlequote) {
+//                     var str_regex = /.*'([^']*)'.*/ ;
+//                     return str_regex.test(singlequote);
+//                     }
                 }
                 else if(rd4.checked==true){
                     alert("The radio button selected is: "+rd4.value)
